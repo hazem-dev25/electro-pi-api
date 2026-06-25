@@ -1,0 +1,545 @@
+{
+  "info": {
+    "_postman_id": "b6e05601-558e-4b75-b3e3-ebcf0d6f01f5",
+    "name": "electro-pi-api",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "50507436",
+    "_collection_link": "https://go.postman.co/collection/50507436-b6e05601-558e-4b75-b3e3-ebcf0d6f01f5?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "auth",
+      "item": [
+        {
+          "name": "registration",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"name\": \"Hazem\", \"email\": \"hadel6464@gmail.com\", \"password\": \"12345678\" , \"confirmPassword\":\"12345678\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "localhost:3000/api/v1/auth/registration",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "v1",
+                "auth",
+                "registration"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "verify_email",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"email\": \"hadel6464@gmail.com\" ,\"code\": \"294941\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "localhost:3000/api/v1/auth/verify_email",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "v1",
+                "auth",
+                "verify_email"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "login",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"email\": \"hadel6464@gmail.com\",\r\n  \"password\": \"12345678\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "localhost:3000/api/v1/auth/login",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "v1",
+                "auth",
+                "login"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "project",
+      "item": [
+        {
+          "name": "createProject",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{supabase_service_role_api_key_1apl}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"title\": \"E-Commerce Backend\",\r\n    \"description\": \"Building the core APIs for e-commerce platform\",\r\n    \"status\": \"pending\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "localhost:3000/api/v1/projects/createProject",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "v1",
+                "projects",
+                "createProject"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "memberProject",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2YTNjNjg5YzIwZWE4YTk4NDg1Nzg3OTIiLCJpYXQiOjE3ODIzNDQzNzIsImV4cCI6MTc4MjM0NjE3MiwiYXVkIjoiTWVtYmVyIn0.5sYH9VsKuojOKTJovDcmSHPmQNWhzVnZxtgqvSW-3ok",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "localhost:3000/api/v1/projects/memberProject",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "v1",
+                "projects",
+                "memberProject"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "getProjectById",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2YTNjNjg5YzIwZWE4YTk4NDg1Nzg3OTIiLCJpYXQiOjE3ODIzNDQzNzIsImV4cCI6MTc4MjM0NjE3MiwiYXVkIjoiTWVtYmVyIn0.5sYH9VsKuojOKTJovDcmSHPmQNWhzVnZxtgqvSW-3ok",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "localhost:3000/api/v1/projects/getProjectById/6a3c6ac320ea8a9848578793",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "v1",
+                "projects",
+                "getProjectById",
+                "6a3c6ac320ea8a9848578793"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "updateProject",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2YTNjNjg5YzIwZWE4YTk4NDg1Nzg3OTIiLCJpYXQiOjE3ODIzNDQzNzIsImV4cCI6MTc4MjM0NjE3MiwiYXVkIjoiTWVtYmVyIn0.5sYH9VsKuojOKTJovDcmSHPmQNWhzVnZxtgqvSW-3ok",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"title\": \"devops\",\r\n    \"description\": \"Building the core APIs for app platform\",\r\n    \"status\": \"pending\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "localhost:3000/api/v1/projects/updateProject/6a3c6ac320ea8a9848578793",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "v1",
+                "projects",
+                "updateProject",
+                "6a3c6ac320ea8a9848578793"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "deleteProject",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{json_web_token_1apl}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "localhost:3000/api/v1/projects/daleteProject/6a3c6ac320ea8a9848578793",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "v1",
+                "projects",
+                "daleteProject",
+                "6a3c6ac320ea8a9848578793"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "tasks",
+      "item": [
+        {
+          "name": "createTask",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2YTNjNjg5YzIwZWE4YTk4NDg1Nzg3OTIiLCJpYXQiOjE3ODIzNDQzNzIsImV4cCI6MTc4MjM0NjE3MiwiYXVkIjoiTWVtYmVyIn0.5sYH9VsKuojOKTJovDcmSHPmQNWhzVnZxtgqvSW-3ok",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"title\": \"Database Seeding\",\r\n    \"description\": \"Create a seed script to populate test data\",\r\n    \"status\": \"pending\",\r\n    \"priority\": \"Medium\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "localhost:3000/api/v1/tasks/createTask/6a3c6b6020ea8a9848578794",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "v1",
+                "tasks",
+                "createTask",
+                "6a3c6b6020ea8a9848578794"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "getProjectTasks",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{supabase_service_role_api_key_0raz}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"title\": \"Database Seeding\",\r\n    \"description\": \"Create a seed script to populate test data\",\r\n    \"status\": \"pending\",\r\n    \"priority\": \"Medium\"\r\n}"
+            },
+            "url": {
+              "raw": "localhost:3000/api/v1/tasks/getProjectTasks/6a3c6b6020ea8a9848578794",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "v1",
+                "tasks",
+                "getProjectTasks",
+                "6a3c6b6020ea8a9848578794"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "getTaskById",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{supabase_service_role_api_key_0raz}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "localhost:3000/api/v1/tasks/getTaskById/6a3c70f0b317fa10da1cbb1f",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "v1",
+                "tasks",
+                "getTaskById",
+                "6a3c70f0b317fa10da1cbb1f"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "updateTask",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{supabase_service_role_api_key_0raz}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"title\": \"socialMedia app\",\r\n    \"description\": \"Create a api  for app\",\r\n    \"status\": \"pending\",\r\n    \"priority\": \"Medium\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "localhost:3000/api/v1/tasks/updateTask/6a3c70f0b317fa10da1cbb1f",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "v1",
+                "tasks",
+                "updateTask",
+                "6a3c70f0b317fa10da1cbb1f"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "deleteTask",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{supabase_service_role_api_key_0raz}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "localhost:3000/api/v1/tasks/deleteTask/6a3c70f0b317fa10da1cbb1f",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "v1",
+                "tasks",
+                "deleteTask",
+                "6a3c70f0b317fa10da1cbb1f"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "filterTasks",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{supabase_service_role_api_key_0raz}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "localhost:3000/api/v1/tasks/filterTasks/6a3c6b6020ea8a9848578794?status=pending&priority=Medium",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "v1",
+                "tasks",
+                "filterTasks",
+                "6a3c6b6020ea8a9848578794"
+              ],
+              "query": [
+                {
+                  "key": "status",
+                  "value": "pending"
+                },
+                {
+                  "key": "priority",
+                  "value": "Medium"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "json_web_token_1apl",
+      "secret": true
+    },
+    {
+      "key": "supabase_service_role_api_key_1apl",
+      "secret": true
+    },
+    {
+      "key": "supabase_service_role_api_key_0raz",
+      "secret": true
+    }
+  ]
+}
