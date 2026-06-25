@@ -35,7 +35,7 @@ class TaskService {
     let limit = parseInt(req.query.limit as string) || 10;
     let skip = (page - 1) * limit;
 
-    let tasks = await this.repo.find({ projectId }).skip(skip).limit(limit);
+    let tasks = await this.repo.find({projectId} , {} ,undefined ,{} ,limit , skip)
 
     if (!tasks || tasks.length === 0) {
       throw new NotFoundException("project is not found", 404);

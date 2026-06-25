@@ -38,9 +38,8 @@ class ProjectService {
     let limit = parseInt(req.query.limit as string) || 10;
     let skip = (page - 1) * limit;
     let project = await this.repo
-      .find({ userid: userId })
-      .skip(skip)
-      .limit(limit);
+      .find({ userid: userId } ,{} ,undefined ,{} , limit ,skip)
+      
     if (!project || project.length === 0) {
       throw new NotFoundException("project is not found" ,404);
     }
